@@ -1,0 +1,159 @@
+/***************************************
+                VARIABLES
+****************************************/
+/************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  display: none;
+  position: relative;
+}
+.contenedor .contenido_primario {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-grow: 0;
+}
+.contenedor .contenido_primario header {
+  padding: 20px 40px;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  z-index: 2;
+  background-color: #ffffff;
+}
+.contenedor .contenido_primario header .logo h1 {
+  font-family: "Raleway", sans-serif;
+}
+.contenedor .contenido_primario header nav {
+  width: 100%;
+  height: 100%;
+}
+.contenedor .contenido_primario header nav ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  text-align: center;
+}
+.contenedor .contenido_primario header nav ul li {
+  list-style: none;
+  margin: auto;
+}
+.contenedor .contenido_primario header nav ul li a {
+  font-weight: 500;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  color: #5a5a5a;
+  margin-right: 10px;
+}
+.contenedor .contenido_primario header nav ul li a.link_trabajos {
+  color: #095194;
+}
+.contenedor .contenido_primario header nav ul li a:hover {
+  color: #575757;
+}
+.contenedor .contenido_primario main {
+  position: relative;
+  width: 100%;
+  margin-top: 60px;
+}
+.contenedor .contenido_primario main::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url("../img/vector-banner.svg");
+  background-repeat: no-repeat;
+  right: 0;
+  background-size: cover;
+  z-index: -1;
+}
+.contenedor .contenido_primario main .contenedor_banner {
+  position: relative;
+  padding: 6rem 40px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  align-content: center;
+  align-items: center;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos {
+  display: block;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_titulo {
+  margin-bottom: 1.5rem;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_titulo span {
+  line-height: 3.8rem;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_titulo span h1 {
+  font-size: 4em;
+  color: #3896ed;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_titulo span h3 {
+  color: #5a5a5a;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5em;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_parrafo {
+  margin-bottom: 2.5rem;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_parrafo span p {
+  font-family: "Raleway", sans-serif;
+  color: #5a5a5a;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_boton a {
+  text-decoration: none;
+  background-color: #3896ed;
+  padding: 0.8rem;
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  border-radius: 5px;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_boton a:hover {
+  background-color: #095194;
+  transition: all 0.2s;
+}
+.contenedor .contenido_primario main .contenedor_banner .contenedor_imagen {
+  display: flex;
+  justify-content: flex-end;
+}
+.contenedor .contenido_secundario {
+  position: relative;
+  background: red;
+  width: 100%;
+  min-height: 100vh;
+}
+.contenedor .contenido_secundario .secundario_titulos {
+  padding-top: 120px;
+}
+
+@media (max-width: 992px) {
+  .contenedor .contenido_primario main .contenedor_banner {
+    padding: 2rem 40px;
+    grid-template-columns: 1fr;
+  }
+  .contenedor .contenido_primario main .contenedor_banner .contenedor_textos {
+    text-align: center;
+  }
+  .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen {
+    justify-content: center;
+  }
+  .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen img {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

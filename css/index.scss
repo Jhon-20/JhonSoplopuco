@@ -1,0 +1,176 @@
+/***************************************
+                VARIABLES
+****************************************/
+$fuente-principal: "Raleway", sans-serif;
+$color-principal: #3896ed;
+$color-textos: #5a5a5a;
+$padding: 20px 40px;
+$min-height: 100vh;
+/************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.contenedor {
+  display: none;
+  position: relative;
+
+  .contenido_primario {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-grow: 0;
+    header {
+      padding: $padding;
+      top: 0;
+      position: fixed;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 8fr 4fr;
+      align-content: center;
+      align-items: center;
+      height: 60px;
+      z-index: 2;
+      background-color: #ffffff;
+      .logo {
+        h1 {
+          font-family: $fuente-principal;
+        }
+      }
+
+      nav {
+        width: 100%;
+        height: 100%;
+        ul {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          height: 100%;
+          text-align: center;
+          li {
+            list-style: none;
+            margin: auto;
+            a {
+              font-weight: 500;
+              text-decoration: none;
+              font-family: $fuente-principal;
+              color: $color-textos;
+              margin-right: 10px;
+              &.link_trabajos {
+                color: #095194;
+              }
+              &:hover {
+                color: #575757;
+              }
+            }
+          }
+        }
+      }
+    }
+    main {
+      position: relative;
+      width: 100%;
+      margin-top: 60px;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: url("../img/vector-banner.svg");
+        background-repeat: no-repeat;
+        right: 0;
+        background-size: cover;
+        z-index: -1;
+      }
+      .contenedor_banner {
+        position: relative;
+        padding: 6rem 40px;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        align-content: center;
+        align-items: center;
+
+        .contenedor_textos {
+          display: block;
+          .contenido_titulo {
+            margin-bottom: 1.5rem;
+            span {
+              line-height: 3.8rem;
+              h1 {
+                font-size: 4em;
+                color: $color-principal;
+                font-family: $fuente-principal;
+                font-weight: 800;
+              }
+              h3 {
+                color: $color-textos;
+                font-family: $fuente-principal;
+                font-size: 1.5em;
+              }
+            }
+          }
+          .contenido_parrafo {
+            margin-bottom: 2.5rem;
+            span {
+              p {
+                font-family: $fuente-principal;
+                color: $color-textos;
+              }
+            }
+          }
+          .contenido_boton {
+            a {
+              text-decoration: none;
+              background-color: $color-principal;
+              padding: 0.8rem;
+              color: #ffffff;
+              font-family: $fuente-principal;
+              border-radius: 5px;
+              &:hover {
+                background-color: #095194;
+                transition: all 0.2s;
+              }
+            }
+          }
+        }
+        .contenedor_imagen {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+  .contenido_secundario {
+    position: relative;
+    background: red;
+    width: 100%;
+    min-height: $min-height;
+    .secundario_titulos {
+      padding-top: 120px;
+    }
+  }
+}
+@media (max-width: 992px) {
+  .contenedor {
+    .contenido_primario {
+      main {
+        .contenedor_banner {
+          padding: 2rem 40px;
+          grid-template-columns: 1fr;
+          .contenedor_textos {
+            text-align: center;
+          }
+          .contenedor_imagen {
+            justify-content: center;
+            img {
+              width: 350px;
+              height: 350px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

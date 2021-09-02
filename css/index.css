@@ -141,7 +141,7 @@
 
 @media (max-width: 992px) {
   .contenedor .contenido_primario main .contenedor_banner {
-    padding: 2rem 40px;
+    padding: 2rem 20px;
     grid-template-columns: 1fr;
   }
   .contenedor .contenido_primario main .contenedor_banner .contenedor_textos {
@@ -153,6 +153,22 @@
   .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen img {
     width: 350px;
     height: 350px;
+  }
+}
+@media (max-width: 520px) {
+  .contenedor .contenido_primario header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-gap: 20px;
+    padding: 20px 20px;
+    height: 90px;
+  }
+  .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen {
+    justify-content: center;
+  }
+  .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen img {
+    width: 250px;
+    height: 250px;
   }
 }
 

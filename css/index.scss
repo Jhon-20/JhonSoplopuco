@@ -1,10 +1,13 @@
 /***************************************
                 VARIABLES
 ****************************************/
+:root {
+  --transparent-header-height: 6rem;
+}
 $fuente-principal: "Raleway", sans-serif;
 $color-principal: #3896ed;
 $color-textos: #5a5a5a;
-$padding: 20px 40px;
+$padding: 1rem 6rem;
 $min-height: 100vh;
 /************************************/
 
@@ -14,65 +17,66 @@ $min-height: 100vh;
   box-sizing: border-box;
 }
 .contenedor {
-  display: none;
+  display: flex;
+  flex-direction: column;
   position: relative;
-
-  .contenido_primario {
-    position: relative;
+  min-height: calc(100vh - 4rem);
+  header {
+    padding: 0 6rem;
+    top: 0;
+    left: 0;
+    position: fixed;
     width: 100%;
-    min-height: calc(100vh - 60px);
-    display: flex;
-    flex-grow: 0;
-    header {
-      padding: $padding;
-      top: 0;
-      position: fixed;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 8fr 4fr;
-      align-content: center;
-      align-items: center;
-      height: 60px;
-      z-index: 2;
-      background-color: #ffffff;
-      .logo {
-        h1 {
-          font-family: $fuente-principal;
-        }
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    align-content: center;
+    align-items: center;
+    height: 6rem;
+    z-index: 2;
+    background-color: transparent;
+    transition: all 0.2s;
+    .logo {
+      h1 {
+        font-family: $fuente-principal;
       }
+    }
 
-      nav {
-        width: 100%;
+    nav {
+      width: 100%;
+      height: 100%;
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         height: 100%;
-        ul {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          height: 100%;
-          text-align: center;
-          li {
-            list-style: none;
-            margin: auto;
-            a {
-              font-weight: 500;
-              text-decoration: none;
-              font-family: $fuente-principal;
-              color: $color-textos;
-              margin-right: 10px;
-              &.link_trabajos {
-                color: #095194;
-              }
-              &:hover {
-                color: #575757;
-              }
+        text-align: center;
+        li {
+          list-style: none;
+          margin: auto;
+          a {
+            font-weight: 500;
+            text-decoration: none;
+            font-family: $fuente-principal;
+            color: $color-textos;
+            margin-right: 10px;
+            &.link_trabajos {
+              color: #095194;
+            }
+            &:hover {
+              color: #575757;
             }
           }
         }
       }
     }
-    main {
+  }
+  main {
+    position: relative;
+    width: 100%;
+
+    .contenido_primero {
       position: relative;
-      width: 100%;
-      margin-top: 60px;
+      padding: 0 6rem;
+
       &::before {
         position: absolute;
         content: "";
@@ -84,14 +88,12 @@ $min-height: 100vh;
         background-size: cover;
         z-index: -1;
       }
-      .contenedor_banner {
-        position: relative;
-        padding: 6rem 40px;
+      .landing_grid_banner {
+        padding: 6rem 0;
         display: grid;
         grid-template-columns: 2fr 2fr;
         align-content: center;
         align-items: center;
-
         .contenedor_textos {
           display: block;
           .contenido_titulo {
@@ -143,27 +145,127 @@ $min-height: 100vh;
       }
     }
   }
-  .contenido_secundario {
+
+  .contenido_segundo {
+    padding: $padding;
     position: relative;
-    background: red;
+    background-color: #f6fbff;
     width: 100%;
-    min-height: $min-height;
+    height: 100%;
+
     .secundario_titulos {
-      padding-top: 120px;
+      padding-top: 60px;
+      width: 100%;
+      text-align: center;
+      font-family: $fuente-principal;
+      padding-bottom: 70px;
+      h1 {
+        color: $color-principal;
+        font-size: 2rem;
+      }
+    }
+    .secundario_contenido {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      .secundario_imagen {
+        height: 400px;
+
+        img {
+          width: 600px;
+          position: absolute;
+          height: 650px;
+          bottom: 0;
+        }
+      }
+      .secundario_cards {
+        justify-content: flex-end;
+        align-items: flex-end;
+        .card {
+          position: relative;
+          cursor: pointer;
+          display: grid;
+          grid-template-columns: 4fr 7fr;
+          align-content: center;
+          width: 500px;
+          border-radius: 16px;
+          background-color: #ffffff;
+          margin: auto;
+          margin-bottom: 1rem;
+          font-family: $fuente-principal;
+
+          &:hover:before {
+            position: absolute;
+            content: "";
+            background: rgba(0, 0, 0, 0.286);
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+          }
+
+          .card_imagen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom-left-radius: 16px;
+            border-top-left-radius: 16px;
+
+            figure {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              transition: all 0.4s;
+            }
+            img {
+              width: 110px;
+              height: 110px;
+            }
+          }
+
+          .card_texto {
+            padding: 1em 1.5em;
+            section {
+              margin-bottom: 1em;
+              h1 {
+                margin-bottom: 10px;
+              }
+            }
+          }
+          &:hover figure {
+            width: 110px;
+            transform: scale(1.2);
+          }
+          .uno {
+            background-color: #bcd1ff;
+          }
+          .dos {
+            background: linear-gradient(135deg, #f395ba 0%, #fed182 100%);
+          }
+        }
+      }
     }
   }
 }
+
 @media (max-width: 992px) {
   .contenedor {
-    .contenido_primario {
-      main {
-        .contenedor_banner {
-          padding: 2rem 20px;
+    main {
+      .contenido_primero {
+        padding: 1rem 20px;
+        .landing_grid_banner {
+          padding: 6rem 20px;
           grid-template-columns: 1fr;
           .contenedor_textos {
             text-align: center;
           }
           .contenedor_imagen {
+            margin-top: 3rem;
             justify-content: center;
             img {
               width: 350px;
@@ -172,26 +274,64 @@ $min-height: 100vh;
           }
         }
       }
+      .contenido_segundo {
+        .secundario_contenido {
+          justify-content: center;
+          grid-template-columns: 1fr;
+
+          .secundario_imagen {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
-@media (max-width: 520px) {
+
+@media (max-width: 580px) {
   .contenedor {
-    .contenido_primario {
-      header {
-        grid-template-columns: 1fr;
-        text-align: center;
-        grid-gap: 20px;
-        padding: 20px 20px;
-        height: 90px;
+    header {
+      grid-template-columns: 1fr;
+      text-align: center;
+      grid-gap: 20px;
+      padding: 20px 20px;
+      height: 90px;
+      nav {
+        ul {
+          display: flex;
+          justify-content: space-between;
+          li {
+            a {
+              margin: 0;
+            }
+          }
+        }
       }
-      main {
-        .contenedor_banner {
+    }
+    main {
+      .contenido_primero {
+        .landing_grid_banner {
           .contenedor_imagen {
             justify-content: center;
             img {
               width: 250px;
               height: 250px;
+            }
+          }
+        }
+      }
+      .contenido_segundo {
+        padding: 1rem 20px;
+        .secundario_contenido {
+          .secundario_cards {
+            .card {
+              width: 100%;
+              grid-template-columns: 1fr;
+              .card_imagen {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+              }
             }
           }
         }

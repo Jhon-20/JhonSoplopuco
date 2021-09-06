@@ -1,6 +1,10 @@
 /***************************************
                 VARIABLES
 ****************************************/
+:root {
+  --transparent-header-height: 6rem;
+}
+
 /************************************/
 * {
   margin: 0;
@@ -9,65 +13,65 @@
 }
 
 .contenedor {
-  display: none;
-  position: relative;
-}
-.contenedor .contenido_primario {
-  position: relative;
-  width: 100%;
-  min-height: calc(100vh - 60px);
   display: flex;
-  flex-grow: 0;
+  flex-direction: column;
+  position: relative;
+  min-height: calc(100vh - 4rem);
 }
-.contenedor .contenido_primario header {
-  padding: 20px 40px;
+.contenedor header {
+  padding: 0 6rem;
   top: 0;
+  left: 0;
   position: fixed;
   width: 100%;
   display: grid;
   grid-template-columns: 8fr 4fr;
   align-content: center;
   align-items: center;
-  height: 60px;
+  height: 6rem;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: transparent;
+  transition: all 0.2s;
 }
-.contenedor .contenido_primario header .logo h1 {
+.contenedor header .logo h1 {
   font-family: "Raleway", sans-serif;
 }
-.contenedor .contenido_primario header nav {
+.contenedor header nav {
   width: 100%;
   height: 100%;
 }
-.contenedor .contenido_primario header nav ul {
+.contenedor header nav ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
   text-align: center;
 }
-.contenedor .contenido_primario header nav ul li {
+.contenedor header nav ul li {
   list-style: none;
   margin: auto;
 }
-.contenedor .contenido_primario header nav ul li a {
+.contenedor header nav ul li a {
   font-weight: 500;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   color: #5a5a5a;
   margin-right: 10px;
 }
-.contenedor .contenido_primario header nav ul li a.link_trabajos {
+.contenedor header nav ul li a.link_trabajos {
   color: #095194;
 }
-.contenedor .contenido_primario header nav ul li a:hover {
+.contenedor header nav ul li a:hover {
   color: #575757;
 }
-.contenedor .contenido_primario main {
+.contenedor main {
   position: relative;
   width: 100%;
-  margin-top: 60px;
 }
-.contenedor .contenido_primario main::before {
+.contenedor main .contenido_primero {
+  position: relative;
+  padding: 0 6rem;
+}
+.contenedor main .contenido_primero::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -78,43 +82,42 @@
   background-size: cover;
   z-index: -1;
 }
-.contenedor .contenido_primario main .contenedor_banner {
-  position: relative;
-  padding: 6rem 40px;
+.contenedor main .contenido_primero .landing_grid_banner {
+  padding: 6rem 0;
   display: grid;
   grid-template-columns: 2fr 2fr;
   align-content: center;
   align-items: center;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos {
   display: block;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_titulo {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_titulo {
   margin-bottom: 1.5rem;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_titulo span {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_titulo span {
   line-height: 3.8rem;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_titulo span h1 {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_titulo span h1 {
   font-size: 4em;
   color: #3896ed;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_titulo span h3 {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_titulo span h3 {
   color: #5a5a5a;
   font-family: "Raleway", sans-serif;
   font-size: 1.5em;
   font-weight: bold;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_parrafo {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_parrafo {
   margin-bottom: 2.5rem;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_parrafo span p {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_parrafo span p {
   font-family: "Raleway", sans-serif;
   color: #5a5a5a;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_boton a {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_boton a {
   text-decoration: none;
   background-color: #3896ed;
   padding: 0.8rem;
@@ -122,54 +125,174 @@
   font-family: "Raleway", sans-serif;
   border-radius: 5px;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_textos .contenido_boton a:hover {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_boton a:hover {
   background-color: #095194;
   transition: all 0.2s;
 }
-.contenedor .contenido_primario main .contenedor_banner .contenedor_imagen {
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
   display: flex;
   justify-content: flex-end;
 }
-.contenedor .contenido_secundario {
+.contenedor .contenido_segundo {
+  padding: 1rem 6rem;
   position: relative;
-  background: red;
+  background-color: #f6fbff;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
 }
-.contenedor .contenido_secundario .secundario_titulos {
-  padding-top: 120px;
+.contenedor .contenido_segundo .secundario_titulos {
+  padding-top: 60px;
+  width: 100%;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  padding-bottom: 70px;
+}
+.contenedor .contenido_segundo .secundario_titulos h1 {
+  color: #3896ed;
+  font-size: 2rem;
+}
+.contenedor .contenido_segundo .secundario_contenido {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_imagen {
+  height: 400px;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_imagen img {
+  width: 600px;
+  position: absolute;
+  height: 650px;
+  bottom: 0;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card {
+  position: relative;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  align-content: center;
+  width: 500px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-family: "Raleway", sans-serif;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card:hover:before {
+  position: absolute;
+  content: "";
+  background: rgba(0, 0, 0, 0.286);
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen img {
+  width: 110px;
+  height: 110px;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card .card_texto {
+  padding: 1em 1.5em;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card .card_texto section {
+  margin-bottom: 1em;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card .card_texto section h1 {
+  margin-bottom: 10px;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card:hover figure {
+  width: 110px;
+  transform: scale(1.2);
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card .uno {
+  background-color: #bcd1ff;
+}
+.contenedor .contenido_segundo .secundario_contenido .secundario_cards .card .dos {
+  background: linear-gradient(135deg, #f395ba 0%, #fed182 100%);
 }
 
 @media (max-width: 992px) {
-  .contenedor .contenido_primario main .contenedor_banner {
-    padding: 2rem 20px;
+  .contenedor main .contenido_primero {
+    padding: 1rem 20px;
+  }
+  .contenedor main .contenido_primero .landing_grid_banner {
+    padding: 6rem 20px;
     grid-template-columns: 1fr;
   }
-  .contenedor .contenido_primario main .contenedor_banner .contenedor_textos {
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos {
     text-align: center;
   }
-  .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen {
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
+    margin-top: 3rem;
     justify-content: center;
   }
-  .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen img {
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen img {
     width: 350px;
     height: 350px;
   }
+  .contenedor main .contenido_segundo .secundario_contenido {
+    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_imagen {
+    display: none;
+  }
 }
-@media (max-width: 520px) {
-  .contenedor .contenido_primario header {
+@media (max-width: 580px) {
+  .contenedor header {
     grid-template-columns: 1fr;
     text-align: center;
     grid-gap: 20px;
     padding: 20px 20px;
     height: 90px;
   }
-  .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen {
+  .contenedor header nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contenedor header nav ul li a {
+    margin: 0;
+  }
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
     justify-content: center;
   }
-  .contenedor .contenido_primario main .contenedor_banner .contenedor_imagen img {
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen img {
     width: 250px;
     height: 250px;
+  }
+  .contenedor main .contenido_segundo {
+    padding: 1rem 20px;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
   }
 }
 

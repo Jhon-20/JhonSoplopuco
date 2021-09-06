@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css" />
-    
     <title>Inicio</title>
   </head>
   <body>
     <div class="contenedor">
-      <div class="contenido_primario">
+     
         <header>
           <div class="logo">
             <h1>LOGO</h1>
@@ -27,8 +24,10 @@
             </ul>
           </nav>
         </header>
-        <main>
-          <div class="contenedor_banner">
+        <main class="landing_contenedor">
+         
+     <section class="contenido_primero">
+       <div class="landing_grid_banner">
           <div class="contenedor_textos">
             <div class="contenido_titulo">
               <span
@@ -52,23 +51,82 @@
           <div class="contenedor_imagen">
             <img src="img/imagen-banner.png" alt="" />
           </div>
-          </div>
-        </main>
-      </div>
-      <div class="contenido_secundario">
+</div>
+          </section>
+     
+ <section class="contenido_segundo">
       <div class="secundario_titulos">
-        <h1>Nuestros Servicios</h1>
+        <h1>Lo que encontraras con nosotros</h1>
+      </div>  
+      <div class="secundario_contenido">
+        <div class="secundario_imagen">
+          <img src="img/person.png" alt="">
+        </div>
+        <div class="secundario_cards">
+          <div class="card">
+          <div class="card_imagen uno">
+            <figure>
+            <img src="img/laptop.png" alt="">
+            </figure>
+
+          </div>
+          <div class="card_texto">
+            <section>
+              <h1>7 Skills of Highly Effective Programmers</h1>
+              <p>
+                Our team was inspired by the seven skills of highly effective
+                programmers created by the TechLead. 
+              </p>
+            </section>
+         
+          </div>
+        </div>
+               <div class="card">
+          <div class="card_imagen dos">
+            <figure>
+            <img src="img/sociales.png" alt="">
+            </figure>
+          </div>
+          <div class="card_texto">
+            <section>
+              <h1>7 Skills of Highly Effective Programmers</h1>
+              <p>
+                Our team was inspired by the seven skills of highly effective
+                programmers created by the TechLead. 
+              </p>
+            </section>
+         
+          </div>
+        </div>
+              <div class="card">
+          <div class="card_imagen uno">
+            <figure>
+            <img src="img/laptop.png" alt="">
+            </figure>
+
+          </div>
+          <div class="card_texto">
+            <section>
+              <h1>7 Skills of Highly Effective Programmers</h1>
+              <p>
+                Our team was inspired by the seven skills of highly effective
+                programmers created by the TechLead. 
+              </p>
+            </section>
+         
+          </div>
+        </div>
+        </div>
       </div>
-      </div>
+      </section>
+ 
+        </main>
+
     </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script>
-    $(document).ready(function () {
-        $(".contenedor").fadeIn(1000);
-    });
-</script>
+    <script src="js/app.js"></script>
 
   </body>
 </html>

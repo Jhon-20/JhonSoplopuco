@@ -414,8 +414,6 @@ $min-height: 100vh;
 @media (max-width: 624px) {
   .contenedor {
     main {
-      .contenido_primero {
-      }
       .contenido_segundo {
         padding: 1rem 20px;
         .secundario_contenido {
@@ -443,14 +441,6 @@ $min-height: 100vh;
       text-align: center;
       grid-gap: 20px;
       height: 90px;
-      nav {
-        ul {
-          li {
-            a {
-            }
-          }
-        }
-      }
     }
     main {
       .contenido_primero {

@@ -19,3 +19,8 @@ function Scroll(x) {
 var x = window.matchMedia("(min-width: 993px)");
 Scroll(x);
 x.addListener(Scroll);
+let menu_bar = document.querySelector(".menu_bar");
+
+menu_bar.onclick = function () {
+  menu.classList.toggle("menu_show");
+};

@@ -10,6 +10,7 @@ $color-textos: #5a5a5a;
 $padding: 0 6rem;
 $padding-responsive: 0 20px;
 $min-height: 100vh;
+$ancho-maximo: 1400px;
 /************************************/
 
 * {
@@ -28,6 +29,8 @@ $min-height: 100vh;
     left: 0;
     position: fixed;
     width: 100%;
+    max-width: $ancho-maximo;
+    margin: auto;
     display: grid;
     grid-template-columns: 8fr 4fr;
     align-content: center;
@@ -72,6 +75,16 @@ $min-height: 100vh;
       }
     }
   }
+  .seccion_titulos {
+    padding: 4rem 0;
+    width: 100%;
+    text-align: center;
+    font-family: $fuente-principal;
+    h1 {
+      color: $color-principal;
+      font-size: 2.5rem;
+    }
+  }
   main {
     position: relative;
     width: 100%;
@@ -79,6 +92,7 @@ $min-height: 100vh;
     .contenido_primero {
       position: relative;
       padding: $padding;
+      width: 100%;
 
       &::before {
         position: absolute;
@@ -97,6 +111,8 @@ $min-height: 100vh;
         grid-template-columns: 2fr 2fr;
         align-content: center;
         align-items: center;
+        margin: auto;
+        max-width: 1400px;
         .contenedor_textos {
           display: block;
           .contenido_titulo {
@@ -155,24 +171,15 @@ $min-height: 100vh;
       width: 100%;
       height: 100%;
 
-      .secundario_titulos {
-        padding: 4rem 0;
-        width: 100%;
-        text-align: center;
-        font-family: $fuente-principal;
-
-        h1 {
-          color: $color-principal;
-          font-size: 2rem;
-        }
-      }
       .secundario_contenido {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding-bottom: 4rem;
         height: 100%;
-        margin-top: 4rem;
+        margin: 4rem auto 0;
+        max-width: 1400px;
+
         .secundario_imagen {
           height: 400px;
 
@@ -254,6 +261,36 @@ $min-height: 100vh;
               width: 110px;
               transform: scale(1.1);
             }
+          }
+        }
+      }
+    }
+    .contenido_tres {
+      width: 100%;
+      height: 100%;
+      max-width: 1400px;
+      flex-direction: column;
+      margin: auto;
+      padding: $padding;
+      .tercero_contenedor_protafolio {
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 210px);
+        gap: 24px;
+        .tercero_potafolio {
+          list-style: none;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &.primero {
+            grid-area: 1 / 1 / 3 / 3;
+          }
+          &.quinto {
+            grid-area: 3 / 2 / 5 / 4;
           }
         }
       }
@@ -413,6 +450,11 @@ $min-height: 100vh;
 }
 @media (max-width: 624px) {
   .contenedor {
+    .seccion_titulos {
+      h1 {
+        font-size: 2rem;
+      }
+    }
     main {
       .contenido_segundo {
         padding: 1rem 20px;

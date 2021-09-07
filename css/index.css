@@ -24,6 +24,8 @@
   left: 0;
   position: fixed;
   width: 100%;
+  max-width: 1400px;
+  margin: auto;
   display: grid;
   grid-template-columns: 8fr 4fr;
   align-content: center;
@@ -65,6 +67,16 @@
 .contenedor header nav .menu_bar {
   display: none;
 }
+.contenedor .seccion_titulos {
+  padding: 4rem 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+.contenedor .seccion_titulos h1 {
+  color: #3896ed;
+  font-size: 2.5rem;
+}
 .contenedor main {
   position: relative;
   width: 100%;
@@ -72,6 +84,7 @@
 .contenedor main .contenido_primero {
   position: relative;
   padding: 0 6rem;
+  width: 100%;
 }
 .contenedor main .contenido_primero::before {
   position: absolute;
@@ -90,6 +103,8 @@
   grid-template-columns: 2fr 2fr;
   align-content: center;
   align-items: center;
+  margin: auto;
+  max-width: 1400px;
 }
 .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos {
   display: block;
@@ -142,23 +157,14 @@
   width: 100%;
   height: 100%;
 }
-.contenedor main .contenido_segundo .secundario_titulos {
-  padding: 4rem 0;
-  width: 100%;
-  text-align: center;
-  font-family: "Raleway", sans-serif;
-}
-.contenedor main .contenido_segundo .secundario_titulos h1 {
-  color: #3896ed;
-  font-size: 2rem;
-}
 .contenedor main .contenido_segundo .secundario_contenido {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 4rem;
   height: 100%;
-  margin-top: 4rem;
+  margin: 4rem auto 0;
+  max-width: 1400px;
 }
 .contenedor main .contenido_segundo .secundario_contenido .secundario_imagen {
   height: 400px;
@@ -239,6 +245,35 @@
 .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card:hover figure {
   width: 110px;
   transform: scale(1.1);
+}
+.contenedor main .contenido_tres {
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  flex-direction: column;
+  margin: auto;
+  padding: 0 6rem;
+}
+.contenedor main .contenido_tres .tercero_contenedor_protafolio {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 210px);
+  gap: 24px;
+}
+.contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio {
+  list-style: none;
+}
+.contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio.primero {
+  grid-area: 1/1/3/3;
+}
+.contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio.quinto {
+  grid-area: 3/2/5/4;
 }
 
 /*
@@ -374,6 +409,9 @@
   }
 }
 @media (max-width: 624px) {
+  .contenedor .seccion_titulos h1 {
+    font-size: 2rem;
+  }
   .contenedor main .contenido_segundo {
     padding: 1rem 20px;
   }

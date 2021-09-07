@@ -8,7 +8,7 @@ $fuente-principal: "Raleway", sans-serif;
 $color-principal: #3896ed;
 $color-textos: #5a5a5a;
 $padding: 0 6rem;
-$padding-responsive: 20px;
+$padding-responsive: 0 20px;
 $min-height: 100vh;
 /************************************/
 
@@ -156,11 +156,11 @@ $min-height: 100vh;
       height: 100%;
 
       .secundario_titulos {
-        padding-top: 60px;
+        padding: 4rem 0;
         width: 100%;
         text-align: center;
         font-family: $fuente-principal;
-        margin-bottom: 9rem;
+
         h1 {
           color: $color-principal;
           font-size: 2rem;
@@ -169,7 +169,10 @@ $min-height: 100vh;
       .secundario_contenido {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        padding-bottom: 4rem;
         height: 100%;
+        margin-top: 4rem;
         .secundario_imagen {
           height: 400px;
 
@@ -221,6 +224,9 @@ $min-height: 100vh;
               &.dos {
                 background: linear-gradient(135deg, #f395ba 0%, #fed182 100%);
               }
+              &.tres {
+                background: linear-gradient(135deg, #44f7d0 0%, #fed182 100%);
+              }
               figure {
                 display: flex;
                 justify-content: center;
@@ -257,10 +263,47 @@ $min-height: 100vh;
 /*
 *******************************RESPONSIVE*****************************************
 */
-@media (max-width: 992px) {
+@media (max-width: 1335px) {
   .contenedor {
     header {
       padding: $padding-responsive;
+    }
+    main {
+      .contenido_primero {
+        padding: $padding-responsive;
+      }
+      .contenido_segundo {
+        padding: $padding-responsive;
+
+        .secundario_contenido {
+          padding-bottom: 9rem;
+          grid-template-columns: 1fr;
+          margin-top: 0;
+          .secundario_imagen {
+            img {
+              right: 6rem;
+              width: 315px;
+              height: 350px;
+            }
+          }
+          .secundario_cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            width: 100%;
+            .card {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .contenedor {
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -323,28 +366,82 @@ $min-height: 100vh;
         }
       }
       .contenido_segundo {
-        .secundario_titulos {
-          margin-bottom: 5rem;
-        }
         .secundario_contenido {
           justify-content: center;
           grid-template-columns: 1fr;
-
+          padding-bottom: 4rem;
           .secundario_imagen {
             display: none;
+          }
+          .secundario_cards {
+            .card {
+              width: 100%;
+              grid-template-columns: 1fr;
+              &:hover:before {
+                background: rgba(246, 249, 255, 0.286);
+              }
+              .card_imagen {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+                &.uno,
+                &.dos,
+                &.tres {
+                  background: #ffffff;
+                }
+                figure {
+                  transition: none;
+                  img {
+                    z-index: 3;
+                  }
+                }
+              }
+              .card_texto {
+                text-align: center;
+                padding: 1rem 2rem;
+                font-size: 0.9rem;
+              }
+              &:hover figure {
+                transform: none;
+              }
+            }
           }
         }
       }
     }
   }
 }
-
+@media (max-width: 624px) {
+  .contenedor {
+    main {
+      .contenido_primero {
+      }
+      .contenido_segundo {
+        padding: 1rem 20px;
+        .secundario_contenido {
+          .secundario_cards {
+            grid-template-columns: 1fr;
+            .card {
+              width: 100%;
+              grid-template-columns: 1fr;
+              &:hover:before {
+                background: rgba(246, 249, 255, 0.286);
+              }
+              .card_texto {
+                padding: 1rem 4rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media (max-width: 580px) {
   .contenedor {
     header {
       text-align: center;
       grid-gap: 20px;
-
       height: 90px;
       nav {
         ul {
@@ -368,36 +465,15 @@ $min-height: 100vh;
         }
       }
       .contenido_segundo {
-        padding: 1rem 20px;
+        padding: $padding-responsive;
         .secundario_contenido {
           .secundario_cards {
+            grid-template-columns: 1fr;
             .card {
               width: 100%;
               grid-template-columns: 1fr;
               &:hover:before {
                 background: rgba(246, 249, 255, 0.286);
-              }
-              .card_imagen {
-                border-bottom-left-radius: 0;
-                border-top-left-radius: 16px;
-                border-top-right-radius: 16px;
-                &.uno,
-                &.dos {
-                  background: #ffffff;
-                }
-                figure {
-                  transition: none;
-                  img {
-                    z-index: 3;
-                  }
-                }
-              }
-              .card_texto {
-                text-align: center;
-                padding: 1rem 4rem;
-              }
-              &:hover figure {
-                transform: none;
               }
             }
           }
@@ -413,8 +489,6 @@ $min-height: 100vh;
         .secundario_contenido {
           .secundario_cards {
             .card {
-              .card_imagen {
-              }
               .card_texto {
                 padding: 1rem 1rem;
               }

@@ -143,11 +143,10 @@
   height: 100%;
 }
 .contenedor main .contenido_segundo .secundario_titulos {
-  padding-top: 60px;
+  padding: 4rem 0;
   width: 100%;
   text-align: center;
   font-family: "Raleway", sans-serif;
-  margin-bottom: 9rem;
 }
 .contenedor main .contenido_segundo .secundario_titulos h1 {
   color: #3896ed;
@@ -156,7 +155,10 @@
 .contenedor main .contenido_segundo .secundario_contenido {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-bottom: 4rem;
   height: 100%;
+  margin-top: 4rem;
 }
 .contenedor main .contenido_segundo .secundario_contenido .secundario_imagen {
   height: 400px;
@@ -210,6 +212,9 @@
 .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen.dos {
   background: linear-gradient(135deg, #f395ba 0%, #fed182 100%);
 }
+.contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen.tres {
+  background: linear-gradient(135deg, #44f7d0 0%, #fed182 100%);
+}
 .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen figure {
   display: flex;
   justify-content: center;
@@ -239,9 +244,38 @@
 /*
 *******************************RESPONSIVE*****************************************
 */
+@media (max-width: 1335px) {
+  .contenedor header {
+    padding: 0 20px;
+  }
+  .contenedor main .contenido_primero {
+    padding: 0 20px;
+  }
+  .contenedor main .contenido_segundo {
+    padding: 0 20px;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido {
+    padding-bottom: 9rem;
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_imagen img {
+    right: 6rem;
+    width: 315px;
+    height: 350px;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card {
+    width: 100%;
+  }
+}
 @media (max-width: 992px) {
   .contenedor header {
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -284,7 +318,7 @@
     cursor: pointer;
   }
   .contenedor main .contenido_primero {
-    padding: 20px;
+    padding: 0 20px;
   }
   .contenedor main .contenido_primero .landing_grid_banner {
     padding: 6rem 20px;
@@ -301,15 +335,60 @@
     width: 350px;
     height: 350px;
   }
-  .contenedor main .contenido_segundo .secundario_titulos {
-    margin-bottom: 5rem;
-  }
   .contenedor main .contenido_segundo .secundario_contenido {
     justify-content: center;
     grid-template-columns: 1fr;
+    padding-bottom: 4rem;
   }
   .contenedor main .contenido_segundo .secundario_contenido .secundario_imagen {
     display: none;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card:hover:before {
+    background: rgba(246, 249, 255, 0.286);
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen.uno, .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen.dos, .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen.tres {
+    background: #ffffff;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen figure {
+    transition: none;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen figure img {
+    z-index: 3;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_texto {
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card:hover figure {
+    transform: none;
+  }
+}
+@media (max-width: 624px) {
+  .contenedor main .contenido_segundo {
+    padding: 1rem 20px;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards {
+    grid-template-columns: 1fr;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card:hover:before {
+    background: rgba(246, 249, 255, 0.286);
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_texto {
+    padding: 1rem 4rem;
   }
 }
 @media (max-width: 580px) {
@@ -326,7 +405,10 @@
     height: 250px;
   }
   .contenedor main .contenido_segundo {
-    padding: 1rem 20px;
+    padding: 0 20px;
+  }
+  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards {
+    grid-template-columns: 1fr;
   }
   .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card {
     width: 100%;
@@ -334,27 +416,6 @@
   }
   .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card:hover:before {
     background: rgba(246, 249, 255, 0.286);
-  }
-  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-  }
-  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen.uno, .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen.dos {
-    background: #ffffff;
-  }
-  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen figure {
-    transition: none;
-  }
-  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_imagen figure img {
-    z-index: 3;
-  }
-  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_texto {
-    text-align: center;
-    padding: 1rem 4rem;
-  }
-  .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card:hover figure {
-    transform: none;
   }
 }
 @media (max-width: 480px) {

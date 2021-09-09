@@ -295,6 +295,7 @@ $fuente-proyectos-grid-small: 1.5rem;
               overflow: hidden;
               position: relative;
               top: 0;
+
               left: 0;
               bottom: 0;
               right: 0;
@@ -434,11 +435,13 @@ $fuente-proyectos-grid-small: 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 4rem;
+      border-bottom: 1px solid #ededed;
       nav {
         display: flex;
         ul {
           position: absolute;
-          background-color: rgb(195, 195, 250);
+          background-color: #ffffff;
           display: flex;
           align-items: flex-start;
           flex-direction: column;
@@ -596,7 +599,6 @@ $fuente-proyectos-grid-small: 1.5rem;
     header {
       text-align: center;
       grid-gap: 20px;
-      height: 90px;
     }
     main {
       .contenido_primero {

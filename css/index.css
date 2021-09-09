@@ -397,13 +397,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 4rem;
+    border-bottom: 1px solid #ededed;
   }
   .contenedor header nav {
     display: flex;
   }
   .contenedor header nav ul {
     position: absolute;
-    background-color: #c3c3fa;
+    background-color: #ffffff;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -537,7 +539,6 @@
   .contenedor header {
     text-align: center;
     grid-gap: 20px;
-    height: 90px;
   }
   .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
     justify-content: center;

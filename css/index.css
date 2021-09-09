@@ -301,6 +301,7 @@
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;
+  object-fit: cover;
 }
 .contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio a .tercero_portafolio_info {
   display: flex;
@@ -493,7 +494,8 @@
     padding: 0 20px;
   }
   .contenedor main .contenido_tres .tercero_contenedor_protafolio {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 210px);
   }
   .contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio {
     list-style: none;

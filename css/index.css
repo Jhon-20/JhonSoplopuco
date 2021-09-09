@@ -262,9 +262,25 @@
   gap: 24px;
 }
 .contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio {
+  position: relative;
   list-style: none;
+  cursor: pointer;
+  transition: all 0.2s;
 }
-.contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio img {
+.contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio a {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+.contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio a:hover:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.651);
+  filter: blur(2px);
+}
+.contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -406,6 +422,26 @@
   }
   .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card:hover figure {
     transform: none;
+  }
+  .contenedor main .contenido_tres {
+    padding: 0 20px;
+  }
+  .contenedor main .contenido_tres .tercero_contenedor_protafolio {
+    grid-template-columns: 1fr;
+  }
+  .contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio {
+    list-style: none;
+  }
+  .contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio.primero {
+    grid-area: 1/1;
+  }
+  .contenedor main .contenido_tres .tercero_contenedor_protafolio .tercero_potafolio.quinto {
+    grid-area: 5/1;
   }
 }
 @media (max-width: 624px) {

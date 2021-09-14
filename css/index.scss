@@ -6,7 +6,7 @@
 }
 $fuente-principal: "Raleway", sans-serif;
 $color-principal: #3896ed;
-$color-textos: #5a5a5a;
+$color-textos: #ffffff;
 $padding: 0 6rem;
 $padding-responsive: 0 20px;
 $min-height: 100vh;
@@ -31,7 +31,7 @@ $fuente-proyectos-grid-small: 1.5rem;
     left: 0;
     position: fixed;
     width: 100%;
-    max-width: $ancho-maximo;
+    // max-width: $ancho-maximo;
     margin: auto;
     display: grid;
     grid-template-columns: 8fr 4fr;
@@ -51,12 +51,50 @@ $fuente-proyectos-grid-small: 1.5rem;
       height: 100%;
       ul {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         height: 100%;
         text-align: center;
+        position: relative;
         li {
           list-style: none;
           margin: auto;
+
+          .dropdown {
+            font-family: $fuente-principal;
+            margin-right: 10px;
+            span {
+              color: #ffffff;
+            }
+            ul {
+              // position: absolute;
+              display: flex;
+              flex-direction: column;
+              max-height: 0;
+
+              transition: all 0.4s;
+              overflow: hidden;
+              li {
+                width: 100%;
+                cursor: pointer;
+                img {
+                  width: 24px;
+                  height: 24px;
+                }
+                &:hover {
+                  background-color: #d1e9ff;
+                }
+              }
+            }
+            &:hover ul {
+              max-height: 400px;
+              background-color: #66b5ff;
+              border-radius: 5px;
+              margin-top: 1rem;
+            }
+            &:hover span {
+              visibility: hidden;
+            }
+          }
           a {
             font-weight: 500;
             text-decoration: none;
@@ -64,7 +102,11 @@ $fuente-proyectos-grid-small: 1.5rem;
             color: $color-textos;
             margin-right: 10px;
             &.link_trabajos {
-              color: #095194;
+              color: #ffffff;
+              background-color: #ffb12a;
+              padding: 0.8rem 1rem;
+              font-weight: 500;
+              border-radius: 30px;
             }
             &:hover {
               color: #575757;
@@ -86,6 +128,9 @@ $fuente-proyectos-grid-small: 1.5rem;
       color: $color-principal;
       font-size: 2.5rem;
     }
+    p {
+      margin-top: 1rem;
+    }
   }
   main {
     position: relative;
@@ -95,26 +140,30 @@ $fuente-proyectos-grid-small: 1.5rem;
       position: relative;
       padding: $padding;
       width: 100%;
-
+      z-index: 3;
+      background-color: #2581d6;
       &::before {
         position: absolute;
         content: "";
         width: 100%;
         height: 100%;
-        background: url("../img/vector-banner.svg");
+        background: url("../img/banner.png");
         background-repeat: no-repeat;
         right: 0;
         background-size: cover;
+        object-fit: cover;
         z-index: -1;
+        bottom: 0;
       }
       .landing_grid_banner {
         padding: 6rem 0;
         display: grid;
-        grid-template-columns: 2fr 2fr;
+        grid-template-columns: 9fr 3fr;
         align-content: center;
         align-items: center;
         margin: auto;
         max-width: 1400px;
+
         .contenedor_textos {
           display: block;
           .contenido_titulo {
@@ -123,7 +172,7 @@ $fuente-proyectos-grid-small: 1.5rem;
               line-height: 3.8rem;
               h1 {
                 font-size: 4em;
-                color: $color-principal;
+                color: #ffffff;
                 font-family: $fuente-principal;
                 font-weight: 800;
               }
@@ -140,7 +189,7 @@ $fuente-proyectos-grid-small: 1.5rem;
             span {
               p {
                 font-family: $fuente-principal;
-                color: $color-textos;
+                color: #c6e4ff;
               }
             }
           }
@@ -148,10 +197,12 @@ $fuente-proyectos-grid-small: 1.5rem;
             a {
               text-decoration: none;
               background-color: $color-principal;
-              padding: 0.8rem;
+              padding: 0.8rem 1.2rem;
+              box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%),
+                0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
               color: #ffffff;
               font-family: $fuente-principal;
-              border-radius: 5px;
+              border-radius: 30px;
               &:hover {
                 background-color: #095194;
                 transition: all 0.2s;
@@ -162,6 +213,11 @@ $fuente-proyectos-grid-small: 1.5rem;
         .contenedor_imagen {
           display: flex;
           justify-content: flex-end;
+          padding: 1.5rem 0;
+          img {
+            // width: 700px;
+            // height: 500px;
+          }
         }
       }
     }
@@ -399,6 +455,20 @@ $fuente-proyectos-grid-small: 1.5rem;
     main {
       .contenido_primero {
         padding: $padding-responsive;
+        .landing_grid_banner {
+          padding: 6rem 1rem 20px;
+          grid-template-columns: 1fr;
+          .contenedor_textos {
+            text-align: center;
+          }
+          .contenedor_imagen {
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            img {
+            }
+          }
+        }
       }
       .contenido_segundo {
         padding: $padding-responsive;
@@ -479,21 +549,21 @@ $fuente-proyectos-grid-small: 1.5rem;
     main {
       .contenido_primero {
         padding: $padding-responsive;
-        .landing_grid_banner {
-          padding: 6rem 20px;
-          grid-template-columns: 1fr;
-          .contenedor_textos {
-            text-align: center;
-          }
-          .contenedor_imagen {
-            margin-top: 3rem;
-            justify-content: center;
-            img {
-              width: 350px;
-              height: 350px;
-            }
-          }
-        }
+        // .landing_grid_banner {
+        //   padding: 6rem 20px;
+        //   grid-template-columns: 1fr;
+        //   .contenedor_textos {
+        //     text-align: center;
+        //   }
+        //   .contenedor_imagen {
+        //     margin-top: 3rem;
+        //     justify-content: center;
+        //     img {
+        //       width: 350px;
+        //       height: 350px;
+        //     }
+        //   }
+        // }
       }
       .contenido_segundo {
         .secundario_contenido {
@@ -606,8 +676,8 @@ $fuente-proyectos-grid-small: 1.5rem;
           .contenedor_imagen {
             justify-content: center;
             img {
-              width: 250px;
-              height: 250px;
+              width: 400px;
+              height: 400px;
             }
           }
         }

@@ -24,7 +24,6 @@
   left: 0;
   position: fixed;
   width: 100%;
-  max-width: 1400px;
   margin: auto;
   display: grid;
   grid-template-columns: 8fr 4fr;
@@ -43,23 +42,62 @@
 }
 .contenedor header nav ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   height: 100%;
   text-align: center;
+  position: relative;
 }
 .contenedor header nav ul li {
   list-style: none;
   margin: auto;
 }
+.contenedor header nav ul li .dropdown {
+  font-family: "Raleway", sans-serif;
+  margin-right: 10px;
+}
+.contenedor header nav ul li .dropdown span {
+  color: #ffffff;
+}
+.contenedor header nav ul li .dropdown ul {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  transition: all 0.4s;
+  overflow: hidden;
+}
+.contenedor header nav ul li .dropdown ul li {
+  width: 100%;
+  cursor: pointer;
+}
+.contenedor header nav ul li .dropdown ul li img {
+  width: 24px;
+  height: 24px;
+}
+.contenedor header nav ul li .dropdown ul li:hover {
+  background-color: #d1e9ff;
+}
+.contenedor header nav ul li .dropdown:hover ul {
+  max-height: 400px;
+  background-color: #66b5ff;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.contenedor header nav ul li .dropdown:hover span {
+  visibility: hidden;
+}
 .contenedor header nav ul li a {
   font-weight: 500;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
-  color: #5a5a5a;
+  color: #ffffff;
   margin-right: 10px;
 }
 .contenedor header nav ul li a.link_trabajos {
-  color: #095194;
+  color: #ffffff;
+  background-color: #ffb12a;
+  padding: 0.8rem 1rem;
+  font-weight: 500;
+  border-radius: 30px;
 }
 .contenedor header nav ul li a:hover {
   color: #575757;
@@ -77,6 +115,9 @@
   color: #3896ed;
   font-size: 2.5rem;
 }
+.contenedor .seccion_titulos p {
+  margin-top: 1rem;
+}
 .contenedor main {
   position: relative;
   width: 100%;
@@ -85,22 +126,26 @@
   position: relative;
   padding: 0 6rem;
   width: 100%;
+  z-index: 3;
+  background-color: #2581d6;
 }
 .contenedor main .contenido_primero::before {
   position: absolute;
   content: "";
   width: 100%;
   height: 100%;
-  background: url("../img/vector-banner.svg");
+  background: url("../img/banner.png");
   background-repeat: no-repeat;
   right: 0;
   background-size: cover;
+  object-fit: cover;
   z-index: -1;
+  bottom: 0;
 }
 .contenedor main .contenido_primero .landing_grid_banner {
   padding: 6rem 0;
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 9fr 3fr;
   align-content: center;
   align-items: center;
   margin: auto;
@@ -117,12 +162,12 @@
 }
 .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_titulo span h1 {
   font-size: 4em;
-  color: #3896ed;
+  color: #ffffff;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
 }
 .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_titulo span h3 {
-  color: #5a5a5a;
+  color: #ffffff;
   font-family: "Raleway", sans-serif;
   font-size: 1.5em;
   font-weight: bold;
@@ -132,15 +177,16 @@
 }
 .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_parrafo span p {
   font-family: "Raleway", sans-serif;
-  color: #5a5a5a;
+  color: #c6e4ff;
 }
 .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_boton a {
   text-decoration: none;
   background-color: #3896ed;
-  padding: 0.8rem;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   color: #ffffff;
   font-family: "Raleway", sans-serif;
-  border-radius: 5px;
+  border-radius: 30px;
 }
 .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos .contenido_boton a:hover {
   background-color: #095194;
@@ -149,6 +195,7 @@
 .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
   display: flex;
   justify-content: flex-end;
+  padding: 1.5rem 0;
 }
 .contenedor main .contenido_segundo {
   padding: 0 6rem;
@@ -369,6 +416,18 @@
   .contenedor main .contenido_primero {
     padding: 0 20px;
   }
+  .contenedor main .contenido_primero .landing_grid_banner {
+    padding: 6rem 1rem 20px;
+    grid-template-columns: 1fr;
+  }
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos {
+    text-align: center;
+  }
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
   .contenedor main .contenido_segundo {
     padding: 0 20px;
   }
@@ -439,21 +498,6 @@
   }
   .contenedor main .contenido_primero {
     padding: 0 20px;
-  }
-  .contenedor main .contenido_primero .landing_grid_banner {
-    padding: 6rem 20px;
-    grid-template-columns: 1fr;
-  }
-  .contenedor main .contenido_primero .landing_grid_banner .contenedor_textos {
-    text-align: center;
-  }
-  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
-    margin-top: 3rem;
-    justify-content: center;
-  }
-  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen img {
-    width: 350px;
-    height: 350px;
   }
   .contenedor main .contenido_segundo .secundario_contenido {
     justify-content: center;
@@ -544,8 +588,8 @@
     justify-content: center;
   }
   .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen img {
-    width: 250px;
-    height: 250px;
+    width: 400px;
+    height: 400px;
   }
   .contenedor main .contenido_segundo {
     padding: 0 20px;

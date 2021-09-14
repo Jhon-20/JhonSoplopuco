@@ -499,6 +499,9 @@
   .contenedor main .contenido_primero {
     padding: 0 20px;
   }
+  .contenedor main .contenido_primero .landing_grid_banner {
+    padding: 6rem 0 0;
+  }
   .contenedor main .contenido_segundo .secundario_contenido {
     justify-content: center;
     grid-template-columns: 1fr;
@@ -584,6 +587,9 @@
     text-align: center;
     grid-gap: 20px;
   }
+  .contenedor main .contenido_primero::before {
+    right: 5em;
+  }
   .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
     justify-content: center;
   }
@@ -606,6 +612,13 @@
   }
 }
 @media (max-width: 480px) {
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
+    justify-content: center;
+  }
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen img {
+    width: 200px;
+    transform: rotate(-20deg);
+  }
   .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_texto {
     padding: 1rem 1rem;
   }

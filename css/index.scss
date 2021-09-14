@@ -549,8 +549,9 @@ $fuente-proyectos-grid-small: 1.5rem;
     main {
       .contenido_primero {
         padding: $padding-responsive;
-        // .landing_grid_banner {
-        //   padding: 6rem 20px;
+        .landing_grid_banner {
+          padding: 6rem 0 0;
+        }
         //   grid-template-columns: 1fr;
         //   .contenedor_textos {
         //     text-align: center;
@@ -672,6 +673,9 @@ $fuente-proyectos-grid-small: 1.5rem;
     }
     main {
       .contenido_primero {
+        &::before {
+          right: 5em;
+        }
         .landing_grid_banner {
           .contenedor_imagen {
             justify-content: center;
@@ -703,6 +707,18 @@ $fuente-proyectos-grid-small: 1.5rem;
 @media (max-width: 480px) {
   .contenedor {
     main {
+      .contenido_primero {
+        .landing_grid_banner {
+          .contenedor_imagen {
+            justify-content: center;
+            img {
+              width: 200px;
+
+              transform: rotate(-20deg);
+            }
+          }
+        }
+      }
       .contenido_segundo {
         .secundario_contenido {
           .secundario_cards {

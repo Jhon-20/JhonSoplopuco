@@ -197,6 +197,9 @@
   justify-content: flex-end;
   padding: 1.5rem 0;
 }
+.contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen .cohete_responsive {
+  display: none;
+}
 .contenedor main .contenido_segundo {
   padding: 0 6rem;
   position: relative;
@@ -565,6 +568,13 @@
   .contenedor .seccion_titulos h1 {
     font-size: 2rem;
   }
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen .cohete_responsive {
+    display: flex;
+  }
+  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen .cohete {
+    width: 279px;
+    height: 300px;
+  }
   .contenedor main .contenido_segundo {
     padding: 1rem 20px;
   }
@@ -593,10 +603,6 @@
   .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen {
     justify-content: center;
   }
-  .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen img {
-    width: 400px;
-    height: 400px;
-  }
   .contenedor main .contenido_segundo {
     padding: 0 20px;
   }
@@ -617,7 +623,6 @@
   }
   .contenedor main .contenido_primero .landing_grid_banner .contenedor_imagen img {
     width: 200px;
-    transform: rotate(-20deg);
   }
   .contenedor main .contenido_segundo .secundario_contenido .secundario_cards .card .card_texto {
     padding: 1rem 1rem;

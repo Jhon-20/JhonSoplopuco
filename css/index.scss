@@ -218,6 +218,9 @@ $fuente-proyectos-grid-small: 1.5rem;
             // width: 700px;
             // height: 500px;
           }
+          .cohete_responsive {
+            display: none;
+          }
         }
       }
     }
@@ -644,6 +647,19 @@ $fuente-proyectos-grid-small: 1.5rem;
       }
     }
     main {
+      .contenido_primero {
+        .landing_grid_banner {
+          .contenedor_imagen {
+            .cohete_responsive {
+              display: flex;
+            }
+            .cohete {
+              width: 279px;
+              height: 300px;
+            }
+          }
+        }
+      }
       .contenido_segundo {
         padding: 1rem 20px;
         .secundario_contenido {
@@ -679,10 +695,6 @@ $fuente-proyectos-grid-small: 1.5rem;
         .landing_grid_banner {
           .contenedor_imagen {
             justify-content: center;
-            img {
-              width: 400px;
-              height: 400px;
-            }
           }
         }
       }
@@ -713,8 +725,6 @@ $fuente-proyectos-grid-small: 1.5rem;
             justify-content: center;
             img {
               width: 200px;
-
-              transform: rotate(-20deg);
             }
           }
         }
